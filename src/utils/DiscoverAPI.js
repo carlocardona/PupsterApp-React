@@ -4,7 +4,7 @@ import axios from 'axios';
 export const DiscoverAPI = () => async (dispatch) => {
   const base_url = 'https://dog.ceo/api/breeds/image/random';
 
-  const loadImage = await axios.get(e);
+  const loadImage = await axios.get();
 
   dispatch({
     type: "GET_DOGS",
