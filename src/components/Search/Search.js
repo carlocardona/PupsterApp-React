@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import DogItem from '../DogItem'
 
 function Search() {
@@ -15,6 +15,21 @@ function Search() {
             setImages(data.message)
         })
     }
+
+    const fetchList = e => {
+        axios.get("https://dog.ceo/api/breeds/list/all")
+            .then(({data}) => {
+                console.log("Dog List " + data);
+            })
+    }
+
+    fetch("https://dog.ceo/api/breeds/list/all")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+
+            
+        })
 
     return (
         <div>
